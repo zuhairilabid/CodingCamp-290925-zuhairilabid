@@ -19,11 +19,11 @@
           <input type="text" id="title" placeholder="Title">
           <input type="date" id="date">
         </div>
-          <textarea id="description" placeholder="Description"></textarea>
-          <button onclick="addTodo()">Add To-Do</button>
+          <textarea id="description" placeholder="Description" style="resize: none; width: 100%; height: 190px;"></textarea>
+          <button class="add-btn" onclick="addTodo()">Add To-Do</button>
         <div id="buttons">
-          <button onclick="filterTodos()">Filter</button>
-          <button onclick="deleteAll()">Delete All</button>
+          <button class="filter-btn" onclick="filterTodos()">Filter</button>
+          <button class="delete-btn" onclick="deleteAll()">Delete All</button>
         </div>
       </div>  
     </div>
@@ -33,7 +33,7 @@
       <h2>My To-Do List</h2>
       <div id="items">
         <!-- To-Do items will be dynamically added here -->
-        <p id="no-todos">No to-dos yet!</p>
+        <p id="no-todos">No to-dos yet! Add one Now!</p>
       </div>
     </div>
   </div>
@@ -43,17 +43,16 @@
     <div id="popup-content">
       <h2 id="popup-title"></h2>
       <input id="popup-date" type="date" disabled>
-      <textarea id="popup-description" disabled></textarea>
+      <textarea id="popup-description" style="resize: none; width: 100%; height: 250px;" disabled></textarea>
       <div class="popup-actions">
-        <button id="edit-btn" onclick="enableEdit()">Edit</button>
-        <button id="save-btn" onclick="saveEdit()" style="display:none;">Save</button>
-        <button id="cancel-btn" onclick="closePopup()">Cancel</button>
+        <button class="edit-btn" id="edit-btn" onclick="enableEdit()">Edit</button>
+        <button class="save-btn" id="save-btn" onclick="saveEdit()" style="display:none;">Save</button>
+        <button class="cancel-btn" id="cancel-btn" onclick="closePopup()">Cancel</button>
       </div>
     </div>
   </div>
 
-  <!-- New Stuff -->
-    <!-- Filter Popup -->
+  <!-- Filter Popup -->
   <div id="filter-popup">
     <div id="filter-content">
       <h2>Filter Options</h2>
@@ -82,9 +81,9 @@
       </div>
 
       <div class="popup-actions">
-        <button onclick="applyFilters()">Apply</button>
-        <button onclick="clearFilters()">Clear</button>
-        <button onclick="closeFilterPopup()">Cancel</button>
+        <button class="apply-btn" onclick="applyFilters()">Apply</button>
+        <button class="clear-btn" onclick="clearFilters()">Clear</button>
+        <button class="cancel-btn" onclick="closeFilterPopup()">Cancel</button>
       </div>
     </div>
   </div>

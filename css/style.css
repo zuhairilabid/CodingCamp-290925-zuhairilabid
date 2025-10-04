@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9fb;
+  color: #333;
   gap: 30px;
   margin: 20px;
 }
@@ -23,33 +27,42 @@ html, body {
 #todo-list {
   width: 45%;
 }
+
 .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   cursor: pointer;
 }
+
 .todo-item .info {
   flex: 1;
 }
+
 .todo-item .actions button {
   margin-left: 5px;
 }
 
 /* Right panel: form */
-
 #todo-form-container {
   display: flex;
   width: 45%;
   flex-direction: column;
 }
+
 #todo-form {
-  border: 1px solid #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
   padding: 15px;
 }
+
 #todo-form input,
 #todo-form textarea,
 #todo-form button,
@@ -57,47 +70,40 @@ html, body {
   display: block;
   margin: 10px 0;
   width: 100%;
-  padding: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
 }
+
 #buttons {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
 
-/* Popup */
-#popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-#popup-content {
-  background: #fff;
-  padding: 20px;
-  width: 400px;
-  border-radius: 5px;
-}
-#popup-content h2 {
-  margin: 0 0 10px 0;
-}
-#popup-content textarea,
-#popup-content input {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 6px;
-}
-#popup-content .popup-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+/* Buttons default */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Filter Popup */
-#filter-popup {
+button:hover {
+  opacity: 0.9;
+}
+
+/* Specific button colors */
+.add-btn { background: #28a745; color: #fff; }      /* green */
+.filter-btn { background: #007bff; color: #fff; }   /* blue */
+.delete-btn { background: #dc3545; color: #fff; }   /* red */
+.status-btn { background: #6c757d; color: #fff; }   /* grey */
+
+/* Popup */
+#popup, #filter-popup {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
@@ -106,25 +112,42 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-#filter-content {
+
+#popup-content, #filter-content {
   background: #fff;
   padding: 20px;
   width: 400px;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
-#filter-content h2 {
+
+#popup-content h2, #filter-content h2 {
   margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
 }
-#filter-content div {
-  margin-bottom: 10px;
-}
+
+#popup-content textarea,
+#popup-content input,
 #filter-content select,
 #filter-content input {
   width: 100%;
-  padding: 6px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
-#filter-content .popup-actions {
+
+.popup-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  margin-top: 10px;
 }
+
+/* Popup buttons */
+.edit-btn { background: #ffc107; color: #000; }   /* yellow */
+.save-btn { background: #28a745; color: #fff; }  /* green */
+.cancel-btn { background: #dc3545; color: #fff; }/* red */
+.apply-btn { background: #28a745; color: #fff; } /* green */
+.clear-btn { background: #ffc107; color: #000; } /* red */
