@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Left side: List -->
+  <div id="todo-list">
+    <h2>My To-Do List</h2>
+    <div id="items"></div>
+  </div>
+
+  <!-- Right side: Form -->
+  <div id="todo-form">
+    <h2>Add To-Do</h2>
+    <div style=>
+        <div style="float:left">
+            <input type="text" id="title" placeholder="Title">
+        </div>
+        <div style="float:left">
+            <input type="date" id="date">
+        </div>
+    </div>
+    <textarea id="description" placeholder="Description"></textarea>
+    <button onclick="addTodo()">Add To-Do</button>
+    <div id="buttons">
+      <button onclick="filterTodos()">Filter</button>
+      <button onclick="deleteAll()">Delete All</button>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup">
+    <div id="popup-content">
+      <h2 id="popup-title"></h2>
+      <input id="popup-date" type="date" disabled>
+      <textarea id="popup-description" disabled></textarea>
+      <div class="popup-actions">
+        <button id="edit-btn" onclick="enableEdit()">Edit</button>
+        <button id="save-btn" onclick="saveEdit()" style="display:none;">Save</button>
+        <button id="cancel-btn" onclick="closePopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Stuff -->
+    <!-- Filter Popup -->
+  <div id="filter-popup">
+    <div id="filter-content">
+      <h2>Filter Options</h2>
+
+      <div>
+        <label>Filter by Date:</label>
+        <input type="date" id="filter-date">
+      </div>
+
+      <div>
+        <label>Sort by Title:</label>
+        <select id="filter-title">
+          <option value="">None</option>
+          <option value="asc">Ascending (A–Z)</option>
+          <option value="desc">Descending (Z–A)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Filter by Status:</label>
+        <select id="filter-status">
+          <option value="">All</option>
+          <option value="Pending">Pending</option>
+          <option value="Finished">Finished</option>
+        </select>
+      </div>
+
+      <div class="popup-actions">
+        <button onclick="applyFilters()">Apply</button>
+        <button onclick="clearFilters()">Clear</button>
+        <button onclick="closeFilterPopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <!---->
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

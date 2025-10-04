@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  gap: 30px;
+  margin: 20px;
+}
+
+/* Left panel: list */
+#todo-list {
+  width: 45%;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.todo-item .info {
+  flex: 1;
+}
+.todo-item .actions button {
+  margin-left: 5px;
+}
+
+/* Right panel: form */
+#todo-form {
+  width: 50%;
+  border: 1px solid #333;
+  padding: 15px;
+}
+#todo-form input,
+#todo-form textarea,
+#todo-form button,
+#todo-form select {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  padding: 8px;
+}
+#buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Popup */
+#popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#popup-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 5px;
+}
+#popup-content h2 {
+  margin: 0 0 10px 0;
+}
+#popup-content textarea,
+#popup-content input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+#popup-content .popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Filter Popup */
+#filter-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#filter-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 5px;
+}
+#filter-content h2 {
+  margin-bottom: 15px;
+}
+#filter-content div {
+  margin-bottom: 10px;
+}
+#filter-content select,
+#filter-content input {
+  width: 100%;
+  padding: 6px;
+}
+#filter-content .popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
