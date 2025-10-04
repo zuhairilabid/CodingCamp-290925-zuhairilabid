@@ -5,7 +5,7 @@ let currentEditIndex = null;
 // Render the list of To-Do items
 function renderTodos(list = todos) {
   const container = document.getElementById('items');
-  container.innerHTML = '';
+  container.innerHTML = ''; // Clear the container before re-rendering
   list.forEach((todo, index) => {
     const div = document.createElement('div');
     div.className = 'todo-item';
@@ -13,9 +13,14 @@ function renderTodos(list = todos) {
       if (e.target.tagName !== 'BUTTON') showPopup(index);
     };
 
+    // Apply color based on the status
+    const statusColor = todo.status === 'Pending' ? 'red' : 'green';
+
     div.innerHTML = `
       <div class="info">
-        <strong>${todo.title}</strong> | ${todo.status} | ${todo.date}
+        <strong>${todo.title}</strong> | 
+        <span style="background-color: ${statusColor}; color: white; padding: 2px 8px; border-radius: 4px;">${todo.status}</span> | 
+        ${todo.date}
       </div>
       <div class="actions">
         <button class="status-btn" onclick="toggleStatus(${index}); event.stopPropagation();">Change Status</button>
