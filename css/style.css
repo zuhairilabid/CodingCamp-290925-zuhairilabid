@@ -1,8 +1,22 @@
 body {
   font-family: Arial, sans-serif;
-  display: flex;
   gap: 30px;
   margin: 20px;
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Container */
+#todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Left panel: list */
@@ -26,8 +40,13 @@ body {
 }
 
 /* Right panel: form */
+
+#todo-form-container {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+}
 #todo-form {
-  width: 50%;
   border: 1px solid #333;
   padding: 15px;
 }

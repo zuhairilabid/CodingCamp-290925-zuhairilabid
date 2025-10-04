@@ -1,3 +1,4 @@
+// render and edit to do items 
 let todos = [];
 let currentEditIndex = null;
 
@@ -24,6 +25,7 @@ function renderTodos(list = todos) {
   });
 }
 
+// add and delete to do items
 function addTodo() {
   const title = document.getElementById('title').value;
   const date = document.getElementById('date').value;
@@ -54,17 +56,9 @@ function deleteAll() {
   }
 }
 
-/*
-function filterTodos() {
-  const type = prompt("Filter by: title/status/date");
-  const value = prompt("Enter value to filter");
-  if(type && value) {
-    const filtered = todos.filter(todo => String(todo[type]).toLowerCase().includes(value.toLowerCase()));
-    renderTodos(filtered);
-  }
-}*/
 
-// New filter state
+// Filtering
+let activeFilters = { date: "", title: "", status: "" };
 function filterTodos() {
   document.getElementById('filter-popup').style.display = 'flex';
 }
